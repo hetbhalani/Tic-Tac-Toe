@@ -32,7 +32,8 @@ def checkWin(o,x):
         
     return -1 
             
-    
+
+
 # def fun(x,o):
 #     for val in x:
 #         if x[val] == 1 :
@@ -60,6 +61,13 @@ if __name__ == "__main__":
             print("X's turn")
             val = int(input("Enter a Value: "))
             x[val] = 1
+            
         turn = 1 - turn 
+        
         winner = checkWin(o,x)
-           
+        if winner != -1 :
+            print("Match is over!")
+            break
+        if checkFull(o, x):
+            print("It's a draw! The board is full and there is no winner.")
+            break
