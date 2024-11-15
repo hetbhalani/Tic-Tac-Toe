@@ -26,7 +26,10 @@ def checkWin(o,x):
         if sum(o[i[0]], o[i[1]], o[i[2]]) == 3:
             print(colored("O won th game! 🎉🎉🎉", "cyan"))
             return 0
-        
+        else:
+            sum(x[i[0]], x[i[1]], x[i[2]]) == 3:
+            print(colored("X won th game! 🎉🎉🎉", "red"))
+            return 1
             
             
     
