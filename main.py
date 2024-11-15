@@ -14,11 +14,16 @@ if __name__ == "__main__":
     x = [0] *9
     turn = 0 
     while True:
-        #turn 0 -> O and 1 -> X
+        #jo turn = 0 -> O and 1 -> X
         makeBoard(o,x)
         if(turn == 0):
             print("O's turn")
-            
+            val = int(input("Enter a Value: "))
+            o[val] = 1 #j value nakhi tya jai ne 1 kari dese
+        else:
+            print("X's turn")
+            val = int(input("Enter a Value: "))
+            x[val] = 1
             
         break
     
