@@ -16,22 +16,23 @@ def makeBoard(o,x):
     print(f'{colored('———', "magenta")}{colored('|', "magenta")}{colored('———', "magenta")}{colored('|', "magenta")}{colored('———', "magenta")}')
     print(f' {colored(mark[6], "grey" if mark[6] == 6 else ("cyan" if mark[6]=="O" else "red"))} {colored('|', "magenta")} {colored(mark[7], "grey" if mark[7] == 7 else ("cyan" if mark[7]=="O" else "red"))} {colored('|', "magenta")} {colored(mark[8], "grey" if mark[8] == 8 else ("cyan" if mark[8]=="O" else "red"))} ')
     
-def sum(a,b,c):
+def makeSum(a,b,c):
     return a+b+c
 
 def checkWin(o,x):
     winPos = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
     
     for i in winPos:
-        if sum(o[i[0]], o[i[1]], o[i[2]]) == 3:
+        if makeSum(o[i[0]], o[i[1]], o[i[2]]) == 3:
             print(colored("O won th game! 🎉🎉🎉", "cyan"))
             return 0
-        if sum(x[i[0]], x[i[1]], x[i[2]]) == 3:
+        if makeSum(x[i[0]], x[i[1]], x[i[2]]) == 3:
             print(colored("X won th game! 🎉🎉🎉", "red"))
             return 1
         
     return -1 
             
+
 
 
 # def fun(x,o):
@@ -50,9 +51,9 @@ if __name__ == "__main__":
     o = [0] *9 
     x = [0] *9
     turn = 0 
+    makeBoard(o,x)
     while True:
         #jo turn = 0 -> O and 1 -> X
-        makeBoard(o,x)
         if(turn == 0):
             print("O's turn")
             val = int(input("Enter a Value: "))
@@ -61,7 +62,8 @@ if __name__ == "__main__":
             print("X's turn")
             val = int(input("Enter a Value: "))
             x[val] = 1
-            
+        
+        makeBoard(o,x)
         turn = 1 - turn 
         
         winner = checkWin(o,x)
@@ -69,5 +71,5 @@ if __name__ == "__main__":
             print("Match is over!")
             break
         if checkFull(o, x):
-            print("It's a draw! The board is full and there is no winner.")
+            print("It's a draw!")
             break
