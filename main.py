@@ -16,6 +16,20 @@ def makeBoard(o,x):
     print(f'{colored('———', "magenta")}{colored('|', "magenta")}{colored('———', "magenta")}{colored('|', "magenta")}{colored('———', "magenta")}')
     print(f' {colored(mark[6], "grey" if mark[6] == 6 else ("cyan" if mark[6]=="O" else "red"))} {colored('|', "magenta")} {colored(mark[7], "grey" if mark[7] == 7 else ("cyan" if mark[7]=="O" else "red"))} {colored('|', "magenta")} {colored(mark[8], "grey" if mark[8] == 8 else ("cyan" if mark[8]=="O" else "red"))} ')
     
+def sum(a,b,c):
+    return a+b+c
+
+def checkWin(o,x):
+    winPos = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
+    
+    for i in winPos:
+        if sum(o[i[0]], o[i[1]], o[i[2]]) == 3:
+            print(colored("O won th game! 🎉🎉🎉", "cyan"))
+            return 0
+        
+            
+            
+    
 # def fun(x,o):
 #     for val in x:
 #         if x[val] == 1 :
