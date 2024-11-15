@@ -33,10 +33,15 @@ def checkWin(o,x):
     return -1 
             
 
-def checkFull(o, x):
-    if all(val != 0 for val in o) and all(val != 0 for val in x):
-        return True
-    return False
+def checkFull(o, x, choise):
+    if choise.lower() == 'o':
+        if sum(o) == 5 and sum(x) == 4:
+            return True
+        return False
+    else:
+        if sum(o) == 4 and sum(x) == 5:
+            return True
+        return False
 
 # def fun(x,o):
 #     for val in x:
@@ -52,9 +57,15 @@ def checkFull(o, x):
 if __name__ == "__main__":
     o = [0] *9 
     x = [0] *9
-    turn = 0 
     playerOne = input("Enter name of Player 1: ")
     playerTwo = input("Enter name of Player 2: ")
+    choise = input(f'Enter your symbol {playerOne} in O or X: ')
+    if choise.lower() == 'x':
+        turn = 1
+    elif choise.lower() == 'o':
+        turn = 0
+    else:
+        print("Not a valid choice")
     makeBoard(o,x)
     
     while True:
@@ -75,6 +86,6 @@ if __name__ == "__main__":
         if winner != -1 :
             print("Match is over!")
             break
-        if checkFull(o, x):
+        if checkFull(o, x,choise):
             print("It's a draw!")
             break
