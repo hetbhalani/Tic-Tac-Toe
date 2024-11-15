@@ -34,7 +34,6 @@ def checkWin(o,x):
             
 
 def checkFull(o, x):
-    # Check if all spots are filled
     if all(val != 0 for val in o) and all(val != 0 for val in x):
         return True
     return False
