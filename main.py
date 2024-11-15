@@ -48,21 +48,23 @@ def checkFull(o, x):
 #         if o[val] == 1:
 #             o[val] == "O"
 #             break
-    
-    
+     
 if __name__ == "__main__":
     o = [0] *9 
     x = [0] *9
     turn = 0 
+    playerOne = input("Enter name of Player 1: ")
+    playerTwo = input("Enter name of Player 2: ")
     makeBoard(o,x)
+    
     while True:
         #jo turn = 0 -> O and 1 -> X
         if(turn == 0):
-            print("O's turn")
+            print(f'{playerOne}\'s turn')
             val = int(input("Enter a Value: "))
             o[val] = 1 #j value nakhi tya jai ne 1 kari dese
         else:
-            print("X's turn")
+            print(f'{playerOne}\'s turn')
             val = int(input("Enter a Value: "))
             x[val] = 1
         
