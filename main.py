@@ -32,8 +32,7 @@ def checkWin(o,x):
             print(colored("X won th game! 🎉🎉🎉", "red"))
             return 1
         
-    return -1 
-            
+    return -1   
 
 def checkFull(o, x, choise):
     if choise.lower() == 'o':
