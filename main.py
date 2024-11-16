@@ -49,17 +49,14 @@ def checkFull(o, x, choise):
 #             x[val] == "X"
 #             break
     
-#     for val in o:
-#         if o[val] == 1:
-#             o[val] == "O"
-#             break
+
      
 if __name__ == "__main__":
     o = [0] *9 
     x = [0] *9
     playerOne = input("Enter name of Player 1: ")
     playerTwo = input("Enter name of Player 2: ")
-    choise = input(f'Enter your symbol {playerOne} in O or X: ')
+    choise = input(f'Enter your symbol {playerOne.upper()} in O or X: ')
     if choise.lower() == 'x':
         turn = 1
     elif choise.lower() == 'o':
