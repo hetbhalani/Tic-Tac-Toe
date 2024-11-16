@@ -1,4 +1,6 @@
 from termcolor import colored
+import sys
+
 def makeBoard(o,x):
     mark = ['O' if o[0]== 1 else ("X" if x[0] == 1 else 0),
             'O' if o[1]== 1 else ("X" if x[1] == 1 else 1),
@@ -43,13 +45,21 @@ def checkFull(o, x, choise):
             return True
         return False
 
+def restart():
+    res = int(input("Enter 1 to restart the game and 0 to exit: "))
+    if res:
+        print("Restarting...")
+        main()
+    else:
+        print("Exiting...")
+        sys.exit()
      
-if __name__ == "__main__":
+def main():
     o = [0] *9 
     x = [0] *9
     playerOne = input("Enter name of Player 1: ")
     playerTwo = input("Enter name of Player 2: ")
-    choise = input(f'Enter your symbol {playerOne.upper()} in O or X: ')
+    choise = input(f'Enter your symbol "{playerOne}" in O or X: ')
     if choise.lower() == 'x':
         turn = 1
     elif choise.lower() == 'o':
@@ -74,8 +84,11 @@ if __name__ == "__main__":
         
         winner = checkWin(o,x)
         if winner != -1 :
-            print("Match is over!")
-            break
+            restart()
+            
         if checkFull(o, x,choise):
             print("It's a draw!")
-            break
+            restart()
+
+if __name__ == "__main__":
+    main()
