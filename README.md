@@ -44,9 +44,13 @@ python main.py
 
 The game board uses numbers 0-8 to represent positions:
 
-<p>
-  <img src="board.jpg"/>
-</p>
+```
+ 0 | 1 | 2 
+———|———|———
+ 3 | 4 | 5 
+———|———|———
+ 6 | 7 | 8 
+```
 
 ## 🎨 Color Scheme
 
