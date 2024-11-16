@@ -43,13 +43,6 @@ def checkFull(o, x, choise):
             return True
         return False
 
-# def fun(x,o):
-#     for val in x:
-#         if x[val] == 1 :
-#             x[val] == "X"
-#             break
-    
-
      
 if __name__ == "__main__":
     o = [0] *9 
