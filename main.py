@@ -68,7 +68,7 @@ def main():
     x = [0] *9
     playerOne = input("Enter name of Player 1: ")
     playerTwo = input("Enter name of Player 2: ")
-    choise = input(f'Enter your symbol "{playerOne}" in O or X: ')
+    choise = input(f'{playerOne.upper} enter your symbol in O or X: ')
     if choise.lower() == 'x':
         turn = 1
     elif choise.lower() == 'o':
@@ -84,7 +84,7 @@ def main():
             val = int(input("Enter a Value: "))
             o[val] = 1 #j value nakhi tya jai ne 1 kari dese
         else:
-            print(f'{playerOne}\'s turn')
+            print(f'{playerTwo}\'s turn')
             val = int(input("Enter a Value: "))
             x[val] = 1
         
